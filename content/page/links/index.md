@@ -1,10 +1,14 @@
 ---
 title: "友链"
 links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: somnus 的 GitHub
+    description: 我的个人代码仓库，主要分享计算机视觉、深度学习、ROS 开发以及 C++/Rust 相关的项目与学习记录。
+    website: https://github.com/somnus4214
+    image: /img/github.jpeg
+  - title: leon 的 X (Twitter)
+    description: 分享技术日常与生活动态，欢迎来找我交流互动！
+    website: https://x.com/HaitangM38838
+    image: /img/x-logo.png 
 menu:
     main: 
         name: "友链"
@@ -15,20 +19,4 @@ menu:
 comments: false
 ---
 
-To use this feature, add `links` section to frontmatter.
-
-This page's frontmatter:
-
-```yaml
-links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-  - title: TypeScript
-    description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
-    website: https://www.typescriptlang.org
-    image: ts-logo-128.jpg
-```
-
-`image` field accepts both local and external images.
+欢迎来到我的友链页面！
