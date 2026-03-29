@@ -5,6 +5,7 @@ draft = true
 categories = [""]
 tags = [""]
 image = ""
+math = true
 [build]
   list = "always"
 +++

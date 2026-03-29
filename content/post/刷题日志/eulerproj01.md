@@ -5,6 +5,7 @@ draft = false
 categories = ["刷题日志"]
 tags = ["Learning","Code"]
 image = ""
+math = true
 [build]
   list = "always"
 +++
