@@ -204,3 +204,48 @@ N = 11(9091a + 910b + 100c)
 \boxed{\text{任意 6 位回文数一定能被 11 整除}}
 \]
 数学博大精深～～！
+
+### p005
+
+#### 题目
+
+Problem 5: Smallest Multiple
+
+[题目链接](https://projecteuler.net/problem=5)
+
+题目描述:
+
+<p>$2520$ is the smallest number that can be divided by each of the numbers from $1$ to $10$ without any remainder.</p>
+问题:
+<p>What is the smallest positive number that is <strong class="tooltip">evenly divisible<span class="tooltiptext">divisible with no remainder</span></strong> by all of the numbers from $1$ to $20$?</p>
+
+#### 解答
+
+这题需要求出1-20所有数字的lcm(最小公倍数)。
+
+$$
+lcm(a,b) = \frac{a * b}{gcd(a , b)}
+$$
+
+代码如下
+
+```rust
+fn gcd(mut a: u64, mut b: u64) -> u64 {
+    while b != 0 {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    a
+}
+
+fn lcm(a: u64, b: u64) -> u64 {
+    a / gcd(a, b) * b
+}
+
+fn solve() -> u64 {
+    (1..20).reduce(|acc, c| lcm(acc, c)).unwrap()
+}
+```
+
+![](https://somnusblog.oss-cn-shanghai.aliyuncs.com/images/20260330142434183.png)
