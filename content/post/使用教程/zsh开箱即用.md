@@ -31,6 +31,12 @@ sudo apt update
 sudo apt install -y zsh git curl #顺便检查一下git和curl的安装
 ```
 
+在archlinux系列可以通过pacman安装
+
+```zsh
+sudo pacman -S zsh
+```
+
 安装完可以检查一下
 
 ```bash
@@ -52,6 +58,8 @@ chsh -s "$(which zsh)"
 ```bash
 echo $SHELL
 ```
+
+如果改完之后还是显示是原始的shell，bash或者fish，建议重启一下。
 
 ### 2.3安装oh-my-zsh
 
@@ -106,6 +114,50 @@ nano ~/.config/starship.toml
 
 最后可以通过`source ~/.zshrc`来让自己的配置生效。
 
+### 2.5安装主题：
+
+如果厌倦了原始简洁主题，可以尝试使用一下这个[powerlevel10k](https://github.com/romkatv/powerlevel10k)，很好看的。安装方法是还是推荐clone到oh my zsh的目录，
+
+```zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+然后在.zshrc中找到ZSH_THEME那一行，改成这个
+
+```zsh
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
+然后再source
+
+```zsh
+source ~/.zshrc
+```
+
+此时就会进入p10k的配置向导，如果没有自动进入可以手动进入
+
+```zsh
+p10k configure
+```
+
+在配置的过程中他会问你能否正常显示一些表情，所以在安装这个包之前最好先准备好支持等宽中文的表情字体，比如Maple Mono NF CN。
+
+- Maple Mono NF CN 可以通过查看[这个链接](https://font.subf.dev/zh-cn/download/)，我们从下图中可以看到，他会推荐使用ArchlinuxCN，我也去问了一下如何添加这个CN到paru源里面。
+- 总共三步,编辑pacman：`sudo nano /etc/pacman.conf`，其次在文件最末尾添加，
+
+```zsh
+[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+```
+
+,最后在保存文件之后，通过这样的命令，
+
+```zsh
+sudo pacman -Sy archlinuxcn-keyring
+```
+
+此时就可以正常下载这个字体了。
+
 ## 3.可能存在的问题
 
 ### 3.1可能在安装并且设置好默认shell后发现没有改。
@@ -113,3 +165,7 @@ nano ~/.config/starship.toml
 这个问题好像是ubuntu自带的终端一直存在的问题，就是没有办法去真正的改变他的shell，我自己也试过很多方法，最后都不行。
 所以我给出的权宜之计就是使用其他的终端模拟器，就是我上面介绍的两个，anticritty或者ghostty，这两者相对来说，功能更完善的还是使用zig编写的ghostty，但是我还是推荐你使用anticritty，(别问为什么，问就是他是使用rust编写的，我是rust信徒。)
 还有一种可能，就是需要logout之后在重新进入才能正确设置成zsh。
+
+```
+
+```
