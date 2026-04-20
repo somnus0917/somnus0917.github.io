@@ -1,9 +1,9 @@
 +++
 title = 'Modern Swjtu Thesis开发'
 date = 2026-04-17T11:22:31+08:00
-draft = true
-categories = [""]
-tags = [""]
+draft = false
+categories = ["项目日志"]
+tags = ["typst","markdown","template"]
 image = ""
 math = true
 [build]
