@@ -1,3 +1,33 @@
-/*
-    You can add your own custom styles here.
-*/
+/* 定义正文字体：霞鹜文楷 */
+@font-face {
+  font-family: "LXGW WenKai";
+  src: url("/fonts/LXGWWenKai-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* 优化加载体验，防止文字闪烁 */
+}
+
+/* 定义代码字体：Maple Mono */
+@font-face {
+  font-family: "Maple Mono";
+  src: url("/fonts/MapleMono-NF-CN-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  /* 全局系统字体（UI界面、标题等） */
+  --sys-font-family: "LXGW WenKai", sans-serif;
+
+  /* 文章正文字体 */
+  --article-font-family: "LXGW WenKai", sans-serif;
+
+  /* 代码块字体 */
+  --code-font-family: "Maple Mono", monospace;
+}
+
+// 打开连字
+code,
+pre {
+  font-variant-ligatures: contextual;
+}
